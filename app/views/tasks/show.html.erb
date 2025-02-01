@@ -1,0 +1,9 @@
+<h1>ToDo詳細</h1>
+
+<div>
+  <p><span>タイトル:</span><%= @task.title %></p>
+  <p><span>完了:</span><%= task.completed %>
+</div>
+
+<%= link_to "編集", edit_task_path(@task) %>
+<%= link_to "戻る", tasks_path %>

@@ -1,0 +1,17 @@
+<h1>ToDoを編集する</h1>
+<%= form_with(model: @task, local: true) do |f| %>
+  <div>
+    <%= f.label :title, "タイトル" %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :completed "完了" %>
+    <%= f.checkbox :completed %>
+  </div>
+
+  <div>
+    <%= f.submit "更新する" %>
+  </div>
+<% end %>
+
+<%= link_to "戻る", tasks_path %>

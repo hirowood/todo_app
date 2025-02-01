@@ -1,0 +1,30 @@
+<h1>ToDoリスト</h1>
+
+<table>
+  <thead>
+    <tr>
+    <th>タイトル</th>
+    <th>完了</th>
+    <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td>
+          <%= task.title %>
+        </td>
+        <td>
+          <%= task.completed ? "✔️" : "✖︎" %>
+        </td>
+        <td>
+          <%= link_to "詳細", task_path(task) %>
+          <%= link_to "編集", edit_task_path(task) %>
+          <%= link_to "削除", task_path(task), data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？"} %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "新しいTodoを追加", new_task_path %>

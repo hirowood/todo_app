@@ -1,0 +1,15 @@
+<h1>新しいToDoを作成</h1>
+<%= form_with(model: @task, local: true) do |f| %>
+  <div>
+    <%= f.label :title, "タイトル" %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :completed "完了" %>
+    <%= f.checkbox :completed %>
+  </div>
+
+  <div>
+    <%= f.submit "作成する" %>
+  </div>
+<% end %>

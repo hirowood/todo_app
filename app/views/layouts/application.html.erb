@@ -10,7 +10,12 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="container mtt-5">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/">ToDoアプリ</a>
+    </nav>
+    <div class="container mt-4">
+      <%= yield %>
+    </div>
   </body>
 </html>

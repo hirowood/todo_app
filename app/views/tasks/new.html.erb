@@ -1,17 +1,20 @@
-<h1>新しいToDoを作成</h1>
-<%= form_with(model: @task, local: true) do |f| %>
-  <div>
-    <%= f.label :title, "タイトル" %>
-    <%= f.text_field :title %>
-  </div>
-  <div>
-    <%= f.label :completed, "完了"%>
-    <%= f.check_box :completed %>
-  </div>
+<h1 class="mb-4">新しいToDoを作成</h1>
 
-  <div>
-    <%= f.submit "作成する" %>
-  </div>
-<% end %>
+<div class="card p-4">
+  <%= form_with(model: @task, local: true) do |f| %>
+    <div class="form-group">
+      <%= f.label :title, "タイトル" %>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+    <div class="form-check">
+      <%= f.check_box :completed, class: "form-check-input"%>
+      <%= f.label :completed, "完了", class: "form-check-label" %>
+    </div>
 
-<%= link_to "戻る", tasks_path %>
+    <div class="mt-3">
+      <%= f.submit "作成する", class: "btn btn-primary"%>
+    </div>
+  <% end %>
+
+  <%= link_to "戻る", tasks_path, class: "btn btn-secondary mt-3" %>
+</div>

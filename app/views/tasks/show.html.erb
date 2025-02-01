@@ -1,9 +1,9 @@
-<h1>ToDo詳細</h1>
+<h1 class="mb-4">ToDo詳細</h1>
 
-<div>
+<div class= "card p-4">
   <p><span>タイトル:</span><%= @task.title %></p>
   <p><span>完了:</span><%= @task.completed ? "✔️完了" : "✖︎未完了" %></p>
 </div>
 
-<%= link_to "編集", edit_task_path(@task) %>
-<%= link_to "戻る", tasks_path %>
+<%= link_to "編集", edit_task_path(@task), class: "btn btn-secondary mt-3" %>
+<%= link_to "戻る", tasks_path, class: "btn btn-secondary mt-3"%>

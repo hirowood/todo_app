@@ -2,7 +2,11 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy, :toggle]
 
   def index
-    @tasks = Task.all
+    if params[:query].present?
+      @tasks = Task.where("title LIKE ?", "%#{params[:query]}%")
+    else
+      @tasks = Task.all
+    end
   end
 
   def show
